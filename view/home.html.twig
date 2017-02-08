@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Status of Tamagotchi</title>
+    </head>
+    <body>
+        <h1>Current Status of your Tam</h1>
+        {% for tam in new_tam %}
+        <h3>Name: {{tam.getName}}</h3>
+        <h3>Food: {{tam.getFood}}</h3>
+        <h3>Attention: {{tam.getAttention}}</h3>
+        <h3>Rest: {{tam.getRest}}</h3>
+        {% endfor %}
+        <form action="/give" method="post">
+            <button type="submit" name="button">+Food</button>
+            <button type="submit" name="button">+Attention</button>
+            <button type="submit" name="button">+Sleep</button>
+        </form>
+
+        <form action="/delete" method="post">
+            <button type="submit" name="button">Create New Tamagotchi</button>
+        </form>
+    </body>
+</html>
