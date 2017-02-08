@@ -57,9 +57,7 @@
         foreach ($_SESSION['tam_status'] as $item) {
 
             if ($item->getFood() == 0 || $item->getAttention() == 0 || $item->getRest() == 0) {
-                $app->get("/dead", function() use ($app) {
                 return $app['twig']->render('dead.html.twig', array('new_tam' => Tamagotchi::getAll()));
-                });
             }
             else {
                 $item->setTime();
