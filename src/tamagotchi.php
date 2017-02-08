@@ -26,9 +26,9 @@ class Tamagotchi
         return $this->food;
     }
 
-    static function setFood()
+    function setFood()
     {
-        return $this->food = $food + 10;
+        $this->food = $this->food + 10;
     }
 
     function getAttention()
@@ -36,9 +36,26 @@ class Tamagotchi
         return $this->attention;
     }
 
+    function setAttention()
+    {
+        $this->attention = $this->attention + 10;
+    }
+
     function getRest()
     {
         return $this->rest;
+    }
+
+    function setRest()
+    {
+        $this->rest = $this->rest + 10;
+    }
+
+    function setTime()
+    {
+        $this->food = $this->food - 10;
+        $this->attention = $this->attention - 10;
+        $this->rest = $this->rest - 10;
     }
 
     function save()
